@@ -211,7 +211,7 @@ func (s *Server) initRouter() (*gin.Engine, error) {
 }
 
 func (s *Server) initI18n(engine *gin.Engine) error {
-	bundle := i18n.NewBundle(language.SimplifiedChinese)
+	bundle := i18n.NewBundle(language.English)
 	bundle.RegisterUnmarshalFunc("toml", toml.Unmarshal)
 	err := fs.WalkDir(i18nFS, "translation", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
@@ -231,51 +231,24 @@ func (s *Server) initI18n(engine *gin.Engine) error {
 		return err
 	}
 
-	findI18nParamNames := func(key string) []string {
-		names := make([]string, 0)
-		keyLen := len(key)
-		for i := 0; i < keyLen-1; i++ {
-			if key[i:i+2] == "{{" { // 判断开头 "{{"
-				j := i + 2
-				isFind := false
-				for ; j < keyLen-1; j++ {
-					if key[j:j+2] == "}}" { // 结尾 "}}"
-						isFind = true
-						break
-					}
-				}
-				if isFind {
-					names = append(names, key[i+3:j])
-				}
-			}
-		}
-		return names
-	}
-
 	var localizer *i18n.Localizer
-
-	engine.FuncMap["i18n"] = func(key string, params ...string) (string, error) {
-		names := findI18nParamNames(key)
-		if len(names) != len(params) {
-			return "", common.NewError("find names:", names, "---------- params:", params, "---------- num not equal")
-		}
-		templateData := map[string]interface{}{}
-		for i := range names {
-			templateData[names[i]] = params[i]
-		}
-		return localizer.Localize(&i18n.LocalizeConfig{
-			MessageID:    key,
-			TemplateData: templateData,
-		})
-	}
 
 	engine.Use(func(c *gin.Context) {
 		accept := c.GetHeader("Accept-Language")
-		localizer = i18n.NewLocalizer(bundle, accept)
+		localizer = i18n.NewLocalizer(bundle, c.Query("lang"), accept)
 		c.Set("localizer", localizer)
 		c.Next()
 	})
 
+	engine.FuncMap["i18n"] = func(key string, params ...string) (string, error) {
+		localizied, _ := localizer.Localize(&i18n.LocalizeConfig{
+			MessageID: key,
+		})
+		logger.Info(localizied)
+		return localizer.Localize(&i18n.LocalizeConfig{
+			MessageID: key,
+		})
+	}
 	return nil
 }
 
