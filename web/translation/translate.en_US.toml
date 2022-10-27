@@ -11,10 +11,10 @@
 "loading" = "loading"
 "copied" = "copied"
 "download" = "download"
-"remark" = "remark"
-"enable" = "enable"
-"protocol" = "protocol"
+"indefinitely"="indefinitely"
 "cpu"="cpu"
+"none" = "none"
+"check" = "check"
 "memory"="memory"
 "swap"="swap"
 "hard-disk"="hard disk"
@@ -47,6 +47,35 @@
 "instalation-warning"="Installation is in progress, please do not refresh this page"
 "change-xray-alert-title"="xray version change"
 "change-xray-alert-subtitle"="change xray version to"
+
+#inbounds
+"total-upload-title"="Total uploads/downloads:"
+"total-amount"="total amount"
+"number-of-inbounds"="number of inbounds"
+"oprate"='oprate'
+"enable" = "enable"
+"remark" = "remark"
+"protocol" = "protocol"
+"port" = "port"
+"traffic" = "traffic"
+"edit" = "edit"
+"delete" = "delete"
+"infinity"="infinity"
+"qr-code" = "QR code"
+"details" = "details"
+"Transport-configuration" = "settings"
+"expiry" = "expiry time"
+"Add-inbound"="Add Inbound"
+"delete-inbound"="Delete Inbound"
+"delete-inbound-warning-text"="Are you sure you want to delete inbound?"
+"edit-inbound"="edit Inbound"
+"reset-traffic"="reset traffic"
+"reset-traffic-warning-text"="Are you sure you want to reset traffic?"
+"copy-link"="copy link"
+"copy-success"="copied"
+
+
+
 
 
 
