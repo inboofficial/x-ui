@@ -7,15 +7,19 @@
 "close" = "close"
 "version" = "version"
 "copy" = "copy"
+"encryption" = "encryption"
+"path" = "path"
 "toggle" = "toggle"
 "loading" = "loading"
 "copied" = "copied"
+"name" = "name"
 "download" = "download"
 "indefinitely"="indefinitely"
 "cpu"="cpu"
 "none" = "none"
 "check" = "check"
 "memory"="memory"
+"monitor" = "monitor"
 "swap"="swap"
 "hard-disk"="hard disk"
 
@@ -73,8 +77,48 @@
 "reset-traffic-warning-text"="Are you sure you want to reset traffic?"
 "copy-link"="copy link"
 "copy-success"="copied"
+"leave-blank"="leave blank by default"
+"leave-blank-sub"="Leave blank to never expire"
+"total-flow"="total flow"
+"means-no-limit"="means no limit"
+"stream-request-version"="request version"
+"stream-request-method"="request method"
+"stream-request-path"="request path"
+"stream-request-header"="request header"
+"stream-response-version"="response version"
+"stream-response-status"="response status"
+"stream-response-status-desc"="response status description"
+
+#tls-settings
+"tls-domain-name"="domain name"
+"tls-certificate"="Certificate"
+"tls-public-key-text"="public key file path"
+"tls-public-key-content"="public key content"
+"tls-key-file-path"="key file path"
+"tls-key-content"="key content"
 
 
+#--------------form-protocols
+
+#dokodemo
+"dokodemo-target-address"="target address"
+"dokodemo-destination-port"="destination port"
+"dokodemo-network"="network"
+
+
+#shadow-socks
+"shadow-socks-network"="network"
+
+#socks
+"socks-password-authentication"="Password Authentication"
+"socks-password"="password"
+"socks-username"="username"
+
+#trojan
+"trojan-password"='password'
+
+#vmess
+"vmess-disable-insecure-encryption"="disable insecure encryption"
 
 
 

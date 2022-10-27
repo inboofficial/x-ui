@@ -9,9 +9,13 @@
 "cancel" = "لغو"
 "check" = "بررسی"
 "none" = "هیچکدام"
+"monitor" = "نظارت"
 "indefinitely" = "به طور نامحدود"
 "qr-code" = "کد QR"
 "close" = "بستن"
+"path" = "مسیر"
+"name" = "نام"
+"encryption" = "encryption"
 "copy" = "کپی"
 "delete" = "حذف"
 "infinity"="نامحدود"
@@ -73,3 +77,45 @@
 "reset-traffic-warning-text"="آیا مطمئن هستید که می خواهید ترافیک را بازنشانی کنید؟"
 "copy-link"="کپی لینک"
 "copy-success"="کپی شد"
+"leave-blank"="به طور پیش فرض خالی بگذارید"
+"leave-blank-sub"="خالی بگذارید تا هرگز منقضی نشود"
+"total-flow"="جریان کل"
+"means-no-limit"="بدون محدودیت"
+"stream-request-version"="درخواست ورژن"
+"stream-request-method"="درخواست method"
+"stream-request-path"="درخواست مسیر"
+"stream-request-header"="درخواست header"
+"stream-response-version"="response ورژن"
+"stream-response-status"="response وضعیت"
+"stream-response-status-desc"="response جزئیات وضعیت"
+
+#tls-settings
+"tls-domain-name"="نام دامنه"
+"tls-certificate"="سرتیفیکیت"
+"tls-public-key-text"="public key مسیر"
+"tls-key-file-path"="key مسیر فایل"
+"tls-public-key-content"="public key محتوای"
+"tls-key-content"="key محتوا"
+
+
+#-----------form-protocols
+
+#dokodemo
+"dokodemo-target-address"="ادرس مقصد"
+"dokodemo-destination-port"="پورت مقصد"
+"dokodemo-network"="شبکه"
+
+
+#shadow-socks
+"shadow-socks-network"="شبکه"
+
+#socks
+"socks-password-authentication"="Password authentication"
+"socks-password"='پسورد'
+"socks-username"='نام کاربری'
+
+#trojan
+"trojan-password"='پسورد'
+
+#vmess
+"vmess-disable-insecure-encryption"="رمزگذاری ناامن را غیرفعال کنید"
