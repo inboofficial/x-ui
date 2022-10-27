@@ -1,12 +1,53 @@
 "username" = "username"
 "password" = "password"
 "login" = "login"
+"login-title" = "login"
 "confirm" = "confirm"
 "cancel" = "cancel"
 "close" = "close"
+"version" = "version"
 "copy" = "copy"
+"toggle" = "toggle"
+"loading" = "loading"
 "copied" = "copied"
 "download" = "download"
 "remark" = "remark"
 "enable" = "enable"
 "protocol" = "protocol"
+"cpu"="cpu"
+"memory"="memory"
+"swap"="swap"
+"hard-disk"="hard disk"
+
+
+
+#sidebar
+"sidebar-system-status"="system status"
+"sidebar-Inbound-list"="Inbound list"
+"sidebar-panel-settings"="panel settings"
+"sidebar-more"="more"
+"sidebar-logout"="logout"
+
+#index
+"index-state"="state"
+"switch-version"="switch version"
+"operation-hours"="operation-hours"
+"RTSWIS"="The running time of the system since it was started"
+"system-load"="system load"
+"tcp-udp-noc"="tcp / udp number of connection"
+"tnocfanc"="The total number of connections for all network cards"
+"snocfanc"="Total upload speed for all network cards"
+"dnocfanc"="Total download speed for all network cards"
+"hnocfanc"="Total upload traffic of all network cards since system startup"
+"tdnocfanc"="Total download traffic of all network cards since system startup"
+"type-switch"="switch version"
+"switch-version-change"="Click on the version you want to switch"
+"switch-version-change-warn-text"="Please choose carefully, older versions may have incompatible configurations"
+"whether-to-switch"="whether to switch"
+"instalation-warning"="Installation is in progress, please do not refresh this page"
+"change-xray-alert-title"="xray version change"
+"change-xray-alert-subtitle"="change xray version to"
+
+
+
+
