@@ -92,7 +92,6 @@
 
 
 #inbound-info
-"tls-domain-name"="tls domain name"
 "xtls-domain-name"="xtls domain name"
 "turn-on"="turn-on"
 "closure"="closure"
@@ -172,3 +171,8 @@
 "tab-other-settings"="other settings"
 "subtab-time-zone"="Time zone"
 "subtab-time-zone-desc"="The scheduled task runs according to the time in the time zone, and restarts the panel to take effect"
+
+
+#restart-model
+"dialog-title"="restart panel"
+"dialog-content"="Are you sure you want to restart the panel? Click OK to restart after 3 seconds. If you cannot access the panel after restarting, please go to the server to view the panel log information"
