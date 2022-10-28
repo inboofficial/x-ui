@@ -5,6 +5,7 @@
 "confirm" = "confirm"
 "cancel" = "cancel"
 "close" = "close"
+"address" = "address"
 "version" = "version"
 "copy" = "copy"
 "encryption" = "encryption"
@@ -89,6 +90,13 @@
 "stream-response-status"="response status"
 "stream-response-status-desc"="response status description"
 
+
+#inbound-info
+"tls-domain-name"="tls domain name"
+"xtls-domain-name"="xtls domain name"
+"turn-on"="turn-on"
+"closure"="closure"
+
 #tls-settings
 "tls-domain-name"="domain name"
 "tls-certificate"="Certificate"
@@ -121,6 +129,46 @@
 "vmess-disable-insecure-encryption"="disable insecure encryption"
 
 
+#---setting
+"top-bar-control-button-save-text"="save configuration"
+"top-bar-control-button-restart-text"="restart panel"
 
+#tabs
+"tab-config-text"="Panel configuration"
 
+"subtab-monitor-panel-ip"="panel monitor IP"
+"subtab-monitor-panel-ip-desc"="Leave blank by default to monitor all IPs, restart the panel to take effect"
+"subtab-panel-listening-port"="Panel listening port"
+"subtab-panel-listening-port-desc"="Restart the panel to take effect"
+"subtab-certificate-public-key"="Panel certificate public key file path"
+"subtab-certificate-public-key-desc"="Fill in an absolute path starting with '/', restart the panel to take effect"
+"subtab-certificate-key-path"="Panel certificate key file path"
+"subtab-certificate-key-path-desc"="Fill in an absolute path starting with '/', restart the panel to take effect"
+"subtab-panel-url-root-path"="panel url root path"
+"subtab-panel-url-root-path-desc"="Fill in an absolute path starting with '/', restart the panel to take effect"
 
+"tab-user-settings"='User settings'
+
+"subtab-original-username"="original username"
+"subtab-old-password"="old password"
+"subtab-new-username"="new username"
+"subtab-new-password"="new password"
+"subtap-change-user-setting-button"="Revise"
+
+"tab-xray-settings"="xray related settings"
+"subtab-xray-config-template"="xray configuration template"
+"subtab-xray-config-template-desc"="Generate the final xray configuration file based on this template, restart the panel to take effect"
+
+"tab-tg-settings"="TG related settings"
+"subtab-enable-telegram-bot"="Enable telegram bot"
+"subtab-enable-telegram-bot-desc"="Restart the panel to take effect"
+"subtab-telegram-bot-token"="Telegram Robot TOKEN"
+"subtab-telegram-bot-token-desc"="Restart the panel to take effect"
+"subtab-telegram-bot-chatId"="Telegram bot Chat Id"
+"subtab-telegram-bot-chatId-desc"="Restart the panel to take effect"
+"subtab-telegram-bot-notification"="Telegram bot notification time"
+"subtab-telegram-bot-notification-desc"="Using Crontab timing format, restart the panel to take effect"
+
+"tab-other-settings"="other settings"
+"subtab-time-zone"="Time zone"
+"subtab-time-zone-desc"="The scheduled task runs according to the time in the time zone, and restarts the panel to take effect"

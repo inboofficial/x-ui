@@ -9,6 +9,7 @@
 "cancel" = "لغو"
 "check" = "بررسی"
 "none" = "هیچکدام"
+"address" = "ادرس"
 "monitor" = "نظارت"
 "indefinitely" = "به طور نامحدود"
 "qr-code" = "کد QR"
@@ -89,6 +90,16 @@
 "stream-response-status"="response وضعیت"
 "stream-response-status-desc"="response جزئیات وضعیت"
 
+
+#inbound-info
+
+"turn-on"="روشن کردن"
+"closure"="بستن"
+"tls-domain-name"="نام دامنه tls"
+"xtls-domain-name"="نام دامنه xtls"
+
+
+
 #tls-settings
 "tls-domain-name"="نام دامنه"
 "tls-certificate"="سرتیفیکیت"
@@ -119,3 +130,51 @@
 
 #vmess
 "vmess-disable-insecure-encryption"="رمزگذاری ناامن را غیرفعال کنید"
+
+
+
+#---settings
+"top-bar-control-button-save-text"="ذخیره پیکربندی"
+"top-bar-control-button-restart-text"="راه اندازی مجدد پنل "
+
+#tabs
+"tab-config-text"="تنظیمات پنل"
+
+"subtab-monitor-panel-ip"="مانیتور پنل IP"
+"subtab-monitor-panel-ip-desc"="برای نظارت بر همه IP ها به طور پیش فرض خالی بگذارید، پانل را مجددا راه اندازی کنید تا اعمال شود"
+"subtab-panel-listening-port"="پورت گوش دادن به پنل"
+"subtab-panel-listening-port-desc"="پانل را مجدداً راه اندازی کنید تا اعمال شود"
+"subtab-certificate-public-key"="مسیر فایل کلید عمومی گواهی پنل"
+"subtab-certificate-public-key-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
+"subtab-certificate-key-path"="مسیر فایل کلید گواهی پانل"
+"subtab-certificate-key-path-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
+"subtab-panel-url-root-path"="مسیر ریشه url پنل"
+"subtab-panel-url-root-path-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
+
+"tab-user-settings"='تنظیمات کاربر'
+"subtab-original-username"="نام کاربری اصلی"
+"subtab-old-password"="پسورد اولیه"
+"subtab-new-username"="نام کاربری جدید"
+"subtab-new-password"="پسورد جدید"
+"subtap-change-user-setting-button"="تغییر"
+
+
+"tab-xray-settings"="تنظیمات مربوط به xray"
+"subtab-xray-config-template"="قالب پیکربندی xray"
+"subtab-xray-config-template-desc"="فایل پیکربندی نهایی xray را بر اساس این الگو ایجاد کنید، پانل را مجدداً راه اندازی کنید تا اعمال شود"
+
+
+"tab-tg-settings"="تنظیمات مربوط به یادآوری TG"
+"subtab-enable-telegram-bot"="فعال کردن ربات تلگرام"
+"subtab-enable-telegram-bot-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
+"subtab-telegram-bot-token"="توکن ربات تلگرام"
+"subtab-telegram-bot-token-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
+"subtab-telegram-bot-chatId"="شناسه چت ربات تلگرام"
+"subtab-telegram-bot-chatId-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
+"subtab-telegram-bot-notification"="زمان اطلاع رسانی ربات تلگرام"
+"subtab-telegram-bot-notification-desc"="با استفاده از قالب زمان بندی Crontab، پانل را مجددا راه اندازی کنید تا اعمال شود"
+
+
+"tab-other-settings"="تنظیمات دیگر"
+"subtab-time-zone"="منطقه زمانی"
+"subtab-time-zone-desc"="کار برنامه ریزی شده مطابق با زمان در این منطقه زمانی اجرا می شود و پانل را مجدداً راه اندازی می کند تا اعمال شود."
