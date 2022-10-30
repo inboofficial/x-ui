@@ -33,26 +33,26 @@
         <a-layout-content>
             <a-row type="flex" justify="center">
                 <a-col :xs="22" :sm="20" :md="16" :lg="12" :xl="8">
-                    <h1>{{ i18n "login-title" }}</h1>
+                    <h1>{{ i18n "login-form-title" }}</h1>
                 </a-col>
             </a-row>
             <a-row type="flex" justify="center">
                 <a-col :xs="22" :sm="20" :md="16" :lg="12" :xl="8">
                     <a-form>
                         <a-form-item>
-                            <a-input v-model.trim="user.username" placeholder='{{ i18n "username" }}'
+                            <a-input v-model.trim="user.username" placeholder='{{ i18n "login-form-field-username" }}'
                                      @keydown.enter.native="login" autofocus>
                                 <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                             </a-input>
                         </a-form-item>
                         <a-form-item>
                             <a-input type="password" v-model.trim="user.password"
-                                     placeholder='{{ i18n "password" }}' @keydown.enter.native="login">
+                                     placeholder='{{ i18n "login-form-field-password" }}' @keydown.enter.native="login">
                                 <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                             </a-input>
                         </a-form-item>
                         <a-form-item>
-                            <a-button block @click="login" :loading="loading">{{ i18n "login" }}</a-button>
+                            <a-button block @click="login" :loading="loading">{{ i18n "login-submit-button-text" }}</a-button>
                         </a-form-item>
                     </a-form>
                 </a-col>

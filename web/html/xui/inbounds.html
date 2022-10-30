@@ -27,15 +27,15 @@
                     <a-card hoverable style="margin-bottom: 20px;">
                         <a-row>
                             <a-col :xs="24" :sm="24" :lg="12">
-                                {{ i18n "total-upload-title" }}
+                                {{ i18n "inbound-total-upload-title" }}
                                 <a-tag color="green">[[ sizeFormat(total.up) ]] / [[ sizeFormat(total.down) ]]</a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
-                                {{i18n "total-amount"}}：
+                                {{i18n "inbound-total-amount"}}：
                                 <a-tag color="green">[[ sizeFormat(total.up + total.down) ]]</a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
-                                {{i18n "number-of-inbounds"}}：
+                                {{i18n "inbound-number-of-inbounds"}}：
                                 <a-tag color="green">[[ dbInbounds.length ]]</a-tag>
                             </a-col>
                         </a-row>
@@ -55,23 +55,23 @@
                                  @change="() => getDBInbounds()">
                             <template slot="action" slot-scope="text, dbInbound">
                                 <a-dropdown :trigger="['click']">
-                                    <a @click="e => e.preventDefault()">{{ i18n "oprate" }}</a>
+                                    <a @click="e => e.preventDefault()">{{ i18n "table-column-name-oprate" }}</a>
                                     <a-menu slot="overlay" @click="a => clickAction(a, dbInbound)">
                                         <a-menu-item v-if="dbInbound.hasLink()" key="qrcode">
                                             <a-icon type="qrcode"></a-icon>
-                                            {{ i18n "qr-code" }}
+                                            {{ i18n "oprate-option-qr-code" }}
                                         </a-menu-item>
                                         <a-menu-item key="edit">
                                             <a-icon type="edit"></a-icon>
-                                            {{ i18n "edit" }}
+                                            {{ i18n "oprate-option-edit" }}
                                         </a-menu-item>
                                         <a-menu-item key="resetTraffic">
                                             <a-icon type="retweet"></a-icon>
-                                            {{ i18n "reset-traffic" }}
+                                            {{ i18n "oprate-option-reset-traffic" }}
                                         </a-menu-item>
                                         <a-menu-item key="delete">
                                             <span style="color: #FF4D4F">
-                                                <a-icon type="delete"></a-icon>{{i18n "delete"}}
+                                                <a-icon type="delete"></a-icon>{{i18n "oprate-option-delete"}}
                                             </span>
                                         </a-menu-item>
                                     </a-menu>
@@ -124,12 +124,12 @@
 <script>
 
     const columns = [{
-        title: '{{ i18n "oprate" }}',
+        title: '{{ i18n "table-column-name-oprate" }}',
         align: 'center',
         width: 30,
         scopedSlots: { customRender: 'action' },
     }, {
-        title: '{{ i18n "enable" }}',
+        title: '{{ i18n "table-column-name-enable" }}',
         align: 'center',
         width: 40,
         scopedSlots: { customRender: 'enable' },
@@ -139,37 +139,37 @@
         dataIndex: "id",
         width: 30,
     }, {
-        title: '{{ i18n "remark" }}',
+        title: '{{ i18n "table-column-name-remark" }}',
         align: 'center',
         width: 100,
         dataIndex: "remark",
     }, {
-        title: '{{ i18n "protocol" }}',
+        title: '{{ i18n "table-column-name-protocol" }}',
         align: 'center',
         width: 60,
         scopedSlots: { customRender: 'protocol' },
     }, {
-        title: '{{ i18n "port" }}',
+        title: '{{ i18n "table-column-name-port" }}',
         align: 'center',
         dataIndex: "port",
         width: 60,
     }, {
-        title: '{{ i18n "traffic" }}',
+        title: '{{ i18n "table-column-name-traffic" }}',
         align: 'center',
         width: 150,
         scopedSlots: { customRender: 'traffic' },
     }, {
-        title: '{{ i18n "details" }}',
+        title: '{{ i18n "table-column-name-details" }}',
         align: 'center',
         width: 40,
         scopedSlots: { customRender: 'settings' },
     }, {
-        title: '{{ i18n "Transport-configuration" }}',
+        title: '{{ i18n "table-column-name-settings" }}',
         align: 'center',
         width: 60,
         scopedSlots: { customRender: 'stream' },
     }, {
-        title: '{{ i18n "expiry" }}',
+        title: '{{ i18n "add-table-popup-expiry" }}',
         align: 'center',
         width: 80,
         scopedSlots: { customRender: 'expiryTime' },
@@ -237,8 +237,8 @@
             },
             openAddInbound() {
                 inModal.show({
-                    title: '{{ i18n "Add-inbound" }}',
-                    okText: '{{ i18n "confirm" }}',
+                    title: '{{ i18n "add-table-popup-title"}}',
+                    okText: '{{ i18n "add-table-popup-button-confirm"}}',
                     confirm: async (inbound, dbInbound) => {
                         inModal.loading();
                         await this.addInbound(inbound, dbInbound);
@@ -250,7 +250,7 @@
                 const inbound = dbInbound.toInbound();
                 inModal.show({
                     title: '{{ i18n "edit-inbound" }}',
-                    okText: '{{ i18n "confirm" }}',
+                    okText: '{{ i18n "add-table-popup-button-confirm" }}',
                     inbound: inbound,
                     dbInbound: dbInbound,
                     confirm: async (inbound, dbInbound) => {
@@ -298,10 +298,10 @@
             },
             resetTraffic(dbInbound) {
                 this.$confirm({
-                    title: '{{ i18n "reset-traffic" }}',
+                    title: '{{ i18n "oprate-option-reset-traffic" }}',
                     content: '{{ i18n "reset-traffic-warning-text" }}',
-                    okText: '{{ i18n "confirm" }}',
-                    cancelText: '{{ i18n "cancel" }}',
+                    okText: '{{ i18n "add-table-popup-button-confirm" }}',
+                    cancelText: '{{ i18n "add-table-popup-button-close" }}',
                     onOk: () => {
                         const inbound = dbInbound.toInbound();
                         dbInbound.up = 0;
@@ -314,14 +314,14 @@
                 this.$confirm({
                     title: '{{ i18n "delete-inbound"}}',
                     content: '{{ i18n "delete-inbound-warning-text" }}',
-                    okText: '{{ i18n "confirm" }}',
-                    cancelText: '{{ i18n "cancel" }}',
+                    okText: '{{ i18n "add-table-popup-button-confirm" }}',
+                    cancelText: '{{ i18n "add-table-popup-button-close" }}',
                     onOk: () => this.submit('/xui/inbound/del/' + dbInbound.id),
                 });
             },
             showQrcode(dbInbound) {
                 const link = dbInbound.genLink();
-                qrModal.show('{{ i18n "qr-code" }}', link);
+                qrModal.show('{{ i18n "oprate-option-qr-code" }}', link);
             },
             showInfo(dbInbound) {
                 infoModal.show(dbInbound);

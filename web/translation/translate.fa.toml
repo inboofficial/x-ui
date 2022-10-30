@@ -1,185 +1,179 @@
-"username" = "نام کاربری"
-"password" = "رمز عبور"
-"login" = "ورود"
-"loading" = "بارگزاری"
-"toggle" = "تغییر وضعیت"
-"version" = "نسخه"
-"login-title" = "وارد شوید"
-"confirm" = "تایید"
-"cancel" = "لغو"
-"check" = "بررسی"
-"none" = "هیچکدام"
-"address" = "ادرس"
-"monitor" = "نظارت"
-"indefinitely" = "به طور نامحدود"
-"qr-code" = "کد QR"
-"close" = "بستن"
-"path" = "مسیر"
-"name" = "نام"
-"encryption" = "encryption"
-"copy" = "کپی"
-"delete" = "حذف"
-"infinity"="نامحدود"
-"edit" = "ویرایش کنید"
-"copied" = "کپی شد"
-"download" = "دانلود"
-"cpu"="پردازنده"
-"memory"="حافظه"
-"swap"="swap"
-"hard-disk"="hard disk"
+#login
+login-form-field-password = 'کلمه عبور'
+login-form-field-username = 'نام کاربری'
+login-form-title = 'ورود'
+login-submit-button-text = 'ورود'
+
+#index-page(system status)
+installation-warning = 'نصب در حال انجام است، لطفاً این صفحه را بازخوانی نکنید'
+system-status-list-download-traffic = 'کل ترافیک دانلود تمامی کارت های شبکه از زمان راه اندازی سیستم'
+system-status-list-download-speed = 'سرعت دانلود کل برای همه کارت های شبکه'
+system-status-list-item-switch-version = 'تغییر ورژن'
+system-status-list-operation-hours = 'ساعت کار'
+system-status-list-operation-hours-tooltip = 'زمان اجرای سیستم از زمان راه اندازی آن'
+system-status-list-system-load = 'بار سیستم'
+system-status-list-tcp-udp-connections = 'TCP / UDP  تعداد اتصال  '
+system-status-list-tcp-udp-connections-tooltip = 'تعداد کل اتصالات برای همه کارت های شبکه'
+system-status-list-upload-speed = 'سرعت کل آپلود برای همه کارت های شبکه'
+system-status-list-upload-traffic = 'کل ترافیک آپلود همه کارت های شبکه از زمان راه اندازی سیستم'
+system-status-list-xray-state = ' xray وضعیت'
+system-status-progress-bar-title-cpu = 'CPU'
+system-status-progress-bar-title-hard-disk = 'هارد دیسک'
+system-status-progress-bar-title-memory = 'مموری'
+system-status-progress-bar-title-swap = 'swap'
+version-switch-alert-box-button-close = 'بستن'
+version-switch-alert-box-button-confirm = 'تایید'
+version-switch-alert-box-instroduction = 'روی نسخه ای که می خواهید تغییر دهید کلیک کنید'
+version-switch-alert-box-title = 'تغییر ورژن'
+version-switch-alert-box-warn = 'لطفاً با دقت انتخاب کنید، نسخه‌های قدیمی‌تر ممکن است تنظیمات ناسازگاری داشته باشند'
+version-switch-alert-confirm-alert-subtitle = ' به xray تغییر نسخه'
+version-switch-alert-confirm-alert-title = ' xray تغییر نسخه'
+
+
 
 #sidebar
-"sidebar-system-status"="وضعیت سیستم"
-"sidebar-Inbound-list"="لیست ورودی"
-"sidebar-panel-settings"="تنظیمات پنل"
-"sidebar-more"="بیشتر"
-"sidebar-logout"="خروج"
+sidebar-Inbound-list = 'لیست ورودی'
+sidebar-logout = 'خروج'
+sidebar-more = 'بیشتر'
+sidebar-panel-settings = 'تنظیمات پنل'
+sidebar-system-status = 'وضعیت سیستم'
 
 
-#index
-"index-state"="وضعیت"
-"switch-version"="ورژن سوییچ"
-"operation-hours"="ساعات فعالیت"
-"RTSWIS"="ساعات فعالیت از زمان شروع"
-"system-load"="لود سیستم"
-"tcp-udp-noc"="تعداد اتصالات tcp / udp"
-"tnocfanc"="تعداد کل اتصالات برای همه کارت های شبکه"
-"snocfanc"="سرعت کل آپلود برای همه کارت های شبکه"
-"dnocfanc"="سرعت دانلود کل برای تمام کارت های شبکه"
-"hnocfanc"="کل ترافیک آپلود همه کارت های شبکه از زمان راه اندازی سیستم"
-"tdnocfanc"="کل ترافیک دانلود تمامی کارت های شبکه از زمان راه اندازی سیستم"
-"type-switch"="نسخه سوئیچ"
-"switch-version-change"="روی نسخه ای که می خواهید تغییر دهید کلیک کنید"
-"switch-version-change-warn-text"="لطفاً با دقت انتخاب کنید، نسخه‌های قدیمی‌تر ممکن است تنظیمات ناسازگاری داشته باشند"
-"whether-to-switch"="سوویچ کردن"
-"instalation-warning"="نصب در حال انجام است، لطفاً این صفحه را بازخوانی نکنید"
-"change-xray-alert-title"="تغییر نسخه ی xray"
-"change-xray-alert-subtitle"="تغییر نسخه ی xray به ورژن"
+#inbound
+add-table-popup-accept-proxy-protocol = 'پروتکل پروکسی را بپذیرید'
+add-table-popup-additional-id = 'شناسه اضافی'
+add-table-popup-alpn = 'alpn'
+add-table-popup-button-close = 'بستن'
+add-table-popup-button-confirm = 'تایید'
+add-table-popup-Certificate = 'گواهی'
+add-table-popup-certificate-file-content = 'محتوای فایل گواهی'
+add-table-popup-certificate-file-path = 'مسیر فایل گواهی'
+add-table-popup-destination-port = 'بندر مقصد'
+add-table-popup-disable-encryption = 'غیرفعال کردن رمزگذاری ناامن'
+add-table-popup-domain-name = 'نام دامنه'
+add-table-popup-enable = 'فعال کردن'
+add-table-popup-enable-udp = 'udp را فعال کنید'
+add-table-popup-encryption = 'رمزگذاری'
+add-table-popup-fallbacks = 'بازگشتی ها'
+add-table-popup-expiry = 'زمان انقضا'
+add-table-popup-expiry-tooltip = 'خالی بگذارید تا هرگز منقضی نشود'
+add-table-popup-http-camouflage = 'استتار http'
+add-table-popup-id = 'شناسه'
+add-table-popup-key-content = 'محتوای کلیدی'
+add-table-popup-key-file-path='مسیر فایل کلیدی'
+add-table-popup-monitor-ip = 'آی پی مانیتور'
+add-table-popup-monitor-ip-tooltip = 'به صورت پیش فرض خالی بگذارید'
+add-table-popup-network = 'شبکه'
+add-table-popup-password = 'کلمه عبور'
+add-table-popup-password-authentication = 'احراز هویت رمز عبور'
+add-table-popup-port = 'بندر'
+add-table-popup-protocol = 'پروتکل'
+add-table-popup-public-key-content = 'محتوای کلید عمومی'
+add-table-popup-public-key-file-path = 'مسیر فایل کلید عمومی'
+add-table-popup-remark = 'تذکر'
+add-table-popup-sniffing = 'بو کشیدن'
+add-table-popup-sniffing-tooltip = 'هیچ الزام خاصی برای حفظ پیش فرض وجود ندارد'
+add-table-popup-target-address = 'آدرس هدف'
+add-table-popup-title = 'Inbound را اضافه کنید'
+add-table-popup-tls = 'tls'
+add-table-popup-total-flow = 'جریان کل'
+add-table-popup-total-flow-tooltip = '0 یعنی بدون محدودیت'
+add-table-popup-transmission = 'انتقال'
+add-table-popup-username = 'نام کاربری'
+add-table-popup-xtls = 'xtls'
+check-option-closure = 'بسته'
+check-option-copy-link = 'لینک را کپی کنید'
+check-option-copy-success = 'کپی شده است'
+delete-inbound = 'حذف ورودی'
+delete-inbound-warning-text = 'آیا مطمئن هستید که می خواهید ورودی را حذف کنید؟'
+edit-inbound = 'Inbound را ویرایش کنید'
+inbound-number-of-inbounds = 'تعداد ورودی ها'
+inbound-total-amount = 'مبلغ کل'
+inbound-total-upload-title = 'مجموع بارگذاری ها / بارگیری ها:'
+oprate-option-delete = 'حذف'
+oprate-option-edit = 'ویرایش کنید'
+oprate-option-qr-code = 'کد QR'
+oprate-option-reset-traffic = 'بازنشانی ترافیک'
+reset-traffic-warning-text = 'آیا مطمئن هستید که می خواهید ترافیک را بازنشانی کنید؟'
+stream-request-header = 'هدر درخواست'
+stream-request-method = 'روش درخواست'
+stream-request-path = 'مسیر درخواست'
+stream-request-version = 'درخواست نسخه'
+stream-response-status = 'وضعیت پاسخ'
+stream-response-status-desc = 'شرح وضعیت پاسخ'
+stream-response-version = 'نسخه پاسخ'
+table-column-name-details = 'جزئیات'
+table-column-name-enable = 'فعال کردن'
+table-column-name-id = 'شناسه'
+table-column-name-oprate = 'عمل کردن'
+table-column-name-port = 'بندر'
+table-column-name-protocol = 'پروتکل'
+table-column-name-remark = 'تذکر'
+table-column-name-settings = 'تنظیمات'
+table-column-name-traffic = 'ترافیک'
+tls-certificate = 'گواهی'
+tls-domain-name = 'نام دامنه'
+tls-key-content = 'محتوای کلیدی'
+tls-key-file-path = 'مسیر فایل کلیدی'
+tls-public-key-content = 'محتوای کلید عمومی'
+tls-public-key-text = 'مسیر فایل کلید عمومی'
+xtls-domain-name = 'نام دامنه xtls'
+vmess-disable-insecure-encryption="رمزگذاری ناامن را غیرفعال کنید"
+
+#settins
+
+dialog-content = 'آیا مطمئن هستید که می خواهید پانل را دوباره راه اندازی کنید؟ روی OK کلیک کنید تا بعد از 3 ثانیه راه اندازی مجدد شود. اگر پس از راه اندازی مجدد نمی توانید به پانل دسترسی پیدا کنید، لطفاً برای مشاهده اطلاعات گزارش پانل به سرور بروید'
+dialog-title = 'پنل راه اندازی مجدد'
+subtab-certificate-key-path = 'مسیر فایل کلید گواهی پانل'
+subtab-certificate-key-path-desc = '''یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود'''
+subtab-certificate-public-key = 'مسیر فایل کلید عمومی گواهی پانل'
+subtab-certificate-public-key-desc = '''یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود'''
+subtab-enable-telegram-bot = 'فعال کردن ربات تلگرام'
+subtab-enable-telegram-bot-desc = 'پانل را مجدداً راه اندازی کنید تا اعمال شود'
+subtab-monitor-panel-ip = 'IP مانیتور پنل'
+subtab-monitor-panel-ip-desc = 'برای نظارت بر همه IP ها به طور پیش فرض خالی بگذارید، پانل را مجددا راه اندازی کنید تا اعمال شود'
+subtab-new-password = 'رمز عبور جدید'
+subtab-new-username = 'شناسه کاربری جدید'
+subtab-old-password = 'رمز عبور قدیمی'
+subtab-original-username = 'نام کاربری اصلی'
+subtab-panel-listening-port = 'پورت گوش دادن به پنل'
+subtab-panel-listening-port-desc = 'پانل را مجدداً راه اندازی کنید تا اعمال شود'
+subtab-panel-url-root-path = 'مسیر ریشه url پنل'
+subtab-panel-url-root-path-desc = '''یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود'''
+subtab-telegram-bot-chatId = 'شناسه چت ربات تلگرام'
+subtab-telegram-bot-chatId-desc = 'پانل را مجدداً راه اندازی کنید تا اعمال شود'
+subtab-telegram-bot-notification = 'زمان اطلاع رسانی ربات تلگرام'
+subtab-telegram-bot-notification-desc = 'با استفاده از قالب زمان بندی Crontab، پانل را مجددا راه اندازی کنید تا اعمال شود'
+subtab-telegram-bot-token = 'ربات تلگرام توکن'
+subtab-telegram-bot-token-desc = 'پانل را مجدداً راه اندازی کنید تا اعمال شود'
+subtab-time-zone = 'منطقه زمانی'
+subtab-time-zone-desc = 'کار برنامه ریزی شده مطابق با زمان در منطقه زمانی اجرا می شود و پانل را مجدداً راه اندازی می کند تا اعمال شود'
+subtab-xray-config-template = 'قالب پیکربندی xray'
+subtab-xray-config-template-desc = 'فایل پیکربندی نهایی xray را بر اساس این الگو ایجاد کنید، پانل را مجدداً راه اندازی کنید تا اعمال شود'
+subtap-change-user-setting-button = 'تجدید نظر کنید'
+tab-config-text = 'پیکربندی پنل'
+tab-other-settings = 'تنظیمات دیگر'
+tab-tg-settings = 'تنظیمات مربوط به TG'
+tab-user-settings = 'تنظیمات کاربر'
+tab-xray-settings = 'تنظیمات مربوط به xray'
+top-bar-control-button-restart-text = 'پنل راه اندازی مجدد'
+top-bar-control-button-save-text = 'ذخیره پیکربندی'
 
 
-#inbounds
-"total-upload-title"="مجموع بارگذاری/دانلود:"
-"total-amount"="کل استفاده"
-"number-of-inbounds"="تعداد ورودی"
-"oprate"='عمل کننده'
-"enable" = "فعال"
-"remark" = "نشانه گذاری"
-"protocol" = "پروتکل"
-"port"="پورت"
-"traffic"="جریان"
-"details"="جزئیات"
-"Transport-configuration"="تنظیمات"
-"expiry"="تاریخ انقضا"
-"Add-inbound"="ورودی را اضافه کنید"
-"delete-inbound"="ورودی را حذف کنید"
-"delete-inbound-warning-text"="آیا مطمئن هستید که می خواهید ورودی را حذف کنید؟"
-"edit-inbound"="ورودی را اصلاح کنید"
-"reset-traffic"="بازنشانی ترافیک"
-"reset-traffic-warning-text"="آیا مطمئن هستید که می خواهید ترافیک را بازنشانی کنید؟"
-"copy-link"="کپی لینک"
-"copy-success"="کپی شد"
-"leave-blank"="به طور پیش فرض خالی بگذارید"
-"leave-blank-sub"="خالی بگذارید تا هرگز منقضی نشود"
-"total-flow"="جریان کل"
-"means-no-limit"="بدون محدودیت"
-"stream-request-version"="درخواست ورژن"
-"stream-request-method"="درخواست method"
-"stream-request-path"="درخواست مسیر"
-"stream-request-header"="درخواست header"
-"stream-response-version"="response ورژن"
-"stream-response-status"="response وضعیت"
-"stream-response-status-desc"="response جزئیات وضعیت"
-
-
-#inbound-info
-
-"turn-on"="روشن کردن"
-"closure"="بستن"
-"xtls-domain-name"="نام دامنه xtls"
-
-
-
-#tls-settings
-"tls-domain-name"="نام دامنه"
-"tls-certificate"="سرتیفیکیت"
-"tls-public-key-text"="public key مسیر"
-"tls-key-file-path"="key مسیر فایل"
-"tls-public-key-content"="public key محتوای"
-"tls-key-content"="key محتوا"
-
-
-#-----------form-protocols
-
-#dokodemo
-"dokodemo-target-address"="ادرس مقصد"
-"dokodemo-destination-port"="پورت مقصد"
-"dokodemo-network"="شبکه"
-
-
-#shadow-socks
-"shadow-socks-network"="شبکه"
-
-#socks
-"socks-password-authentication"="Password authentication"
-"socks-password"='پسورد'
-"socks-username"='نام کاربری'
-
-#trojan
-"trojan-password"='پسورد'
-
-#vmess
-"vmess-disable-insecure-encryption"="رمزگذاری ناامن را غیرفعال کنید"
-
-
-
-#---settings
-"top-bar-control-button-save-text"="ذخیره پیکربندی"
-"top-bar-control-button-restart-text"="راه اندازی مجدد پنل "
-
-#tabs
-"tab-config-text"="تنظیمات پنل"
-
-"subtab-monitor-panel-ip"="مانیتور پنل IP"
-"subtab-monitor-panel-ip-desc"="برای نظارت بر همه IP ها به طور پیش فرض خالی بگذارید، پانل را مجددا راه اندازی کنید تا اعمال شود"
-"subtab-panel-listening-port"="پورت گوش دادن به پنل"
-"subtab-panel-listening-port-desc"="پانل را مجدداً راه اندازی کنید تا اعمال شود"
-"subtab-certificate-public-key"="مسیر فایل کلید عمومی گواهی پنل"
-"subtab-certificate-public-key-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
-"subtab-certificate-key-path"="مسیر فایل کلید گواهی پانل"
-"subtab-certificate-key-path-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
-"subtab-panel-url-root-path"="مسیر ریشه url پنل"
-"subtab-panel-url-root-path-desc"="یک مسیر مطلق که با '/' شروع می شود را پر کنید، پانل را مجددا راه اندازی کنید تا اعمال شود"
-
-"tab-user-settings"='تنظیمات کاربر'
-"subtab-original-username"="نام کاربری اصلی"
-"subtab-old-password"="پسورد اولیه"
-"subtab-new-username"="نام کاربری جدید"
-"subtab-new-password"="پسورد جدید"
-"subtap-change-user-setting-button"="تغییر"
-
-
-"tab-xray-settings"="تنظیمات مربوط به xray"
-"subtab-xray-config-template"="قالب پیکربندی xray"
-"subtab-xray-config-template-desc"="فایل پیکربندی نهایی xray را بر اساس این الگو ایجاد کنید، پانل را مجدداً راه اندازی کنید تا اعمال شود"
-
-
-"tab-tg-settings"="تنظیمات مربوط به یادآوری TG"
-"subtab-enable-telegram-bot"="فعال کردن ربات تلگرام"
-"subtab-enable-telegram-bot-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
-"subtab-telegram-bot-token"="توکن ربات تلگرام"
-"subtab-telegram-bot-token-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
-"subtab-telegram-bot-chatId"="شناسه چت ربات تلگرام"
-"subtab-telegram-bot-chatId-desc"="پنل را مجدداً راه اندازی کنید تا اعمال شود"
-"subtab-telegram-bot-notification"="زمان اطلاع رسانی ربات تلگرام"
-"subtab-telegram-bot-notification-desc"="با استفاده از قالب زمان بندی Crontab، پانل را مجددا راه اندازی کنید تا اعمال شود"
-
-
-"tab-other-settings"="تنظیمات دیگر"
-"subtab-time-zone"="منطقه زمانی"
-"subtab-time-zone-desc"="کار برنامه ریزی شده مطابق با زمان در این منطقه زمانی اجرا می شود و پانل را مجدداً راه اندازی می کند تا اعمال شود."
-
-
-
-#restart-model
-"dialog-title"="راندازی مجدد پنل"
-"dialog-content"="آیا مطمئن هستید که می خواهید پانل را دوباره راه اندازی کنید؟ برای راه اندازی مجدد پس از 3 ثانیه روی تأیید کلیک کنید. اگر پس از راه اندازی مجدد نمی توانید به پانل دسترسی پیدا کنید، لطفاً برای مشاهده اطلاعات گزارش پانل به سرور بروید."
+address = 'نشانی'
+cancel = 'لغو'
+check = 'بررسی'
+close = 'بستن'
+confirm = 'تایید'
+copied = 'کپی شده است'
+copy = 'کپی 🀄'
+download = 'دانلود'
+encryption = 'رمزگذاری'
+indefinitely = 'به طور نامحدود'
+infinity = 'بی نهایت'
+loading = 'بارگذاری'
+name = 'نام'
+none = 'هیچ یک'
+path = 'مسیر'
+toggle = 'تغییر وضعیت'
+version = 'نسخه'

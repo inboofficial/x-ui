@@ -241,10 +241,9 @@ func (s *Server) initI18n(engine *gin.Engine) error {
 	})
 
 	engine.FuncMap["i18n"] = func(key string, params ...string) (string, error) {
-		localizied, _ := localizer.Localize(&i18n.LocalizeConfig{
+		localizer.Localize(&i18n.LocalizeConfig{
 			MessageID: key,
 		})
-		logger.Info(localizied)
 		return localizer.Localize(&i18n.LocalizeConfig{
 			MessageID: key,
 		})

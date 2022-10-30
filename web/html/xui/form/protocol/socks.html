@@ -1,14 +1,14 @@
 {{define "form/socks"}}
 <a-form layout="inline">
-    <a-form-item label='{{ i18n "socks-password-authentication" }}'>
+    <a-form-item label='{{ i18n "add-table-popup-password-authentication" }}'>
         <a-switch :checked="inbound.settings.auth === 'password'"
                   @change="checked => inbound.settings.auth = checked ? 'password' : 'noauth'"></a-switch>
     </a-form-item>
     <template v-if="inbound.settings.auth === 'password'">
-        <a-form-item label='{{ i18n "socks-username" }}'>
+        <a-form-item label='{{ i18n "add-table-popup-username" }}'>
             <a-input v-model.trim="inbound.settings.accounts[0].user"></a-input>
         </a-form-item>
-        <a-form-item label='{{ i18n "socks-password" }}'>
+        <a-form-item label='{{ i18n "add-table-popup-password" }}'>
             <a-input v-model.trim="inbound.settings.accounts[0].pass"></a-input>
         </a-form-item>
     </template>

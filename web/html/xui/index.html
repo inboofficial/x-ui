@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 {{template "head" .}}
 <style>
     @media (min-width: 769px) {
@@ -11,6 +11,11 @@
     .ant-col-sm-24 {
         margin-top: 10px;
     }
+    .ant-tooltip-inner:lang(fa) {
+        text-align: start;
+        direction: rtl;
+    }
+
 </style>
 <body>
 <a-layout id="app" v-cloak>
@@ -28,14 +33,14 @@
                                         <a-progress type="dashboard" status="normal"
                                                     :stroke-color="status.cpu.color"
                                                     :percent="status.cpu.percent"></a-progress>
-                                        <div> {{i18n "cpu"}}</div>
+                                        <div> {{i18n "system-status-progress-bar-title-cpu"}}</div>
                                     </a-col>
                                     <a-col :span="12" style="text-align: center">
                                         <a-progress type="dashboard" status="normal"
                                                     :stroke-color="status.mem.color"
                                                     :percent="status.mem.percent"></a-progress>
                                         <div style="display: flex;flex-direction: row ;gap: 5px; justify-content: center">
-                                            <span>{{i18n "memory"}}</span>
+                                            <span>{{i18n "system-status-progress-bar-title-memory"}}</span>
                                             <div>
                                                 : [[ sizeFormat(status.mem.current) ]] / [[ sizeFormat(status.mem.total) ]]
                                             </div>
@@ -51,7 +56,7 @@
                                                     :stroke-color="status.swap.color"
                                                     :percent="status.swap.percent"></a-progress>
                                         <div style="display: flex;flex-direction: row;gap: 5px ; justify-content: center">
-                                            <span>{{i18n "swap"}}</span>
+                                            <span>{{i18n "system-status-progress-bar-title-swap"}}</span>
                                             <div>
                                                 : [[ sizeFormat(status.swap.current) ]] / [[ sizeFormat(status.swap.total) ]]
                                             </div>
@@ -63,7 +68,7 @@
                                                     :stroke-color="status.disk.color"
                                                     :percent="status.disk.percent"></a-progress>
                                         <div style="display: flex;flex-direction: row;gap: 5px ; justify-content: center">
-                                            <span>{{i18n "hard-disk"}}</span>
+                                            <span>{{i18n "system-status-progress-bar-title-hard-disk"}}</span>
                                             <div>
                                                 : [[ sizeFormat(status.disk.current) ]] / [[ sizeFormat(status.disk.total) ]]
                                             </div>
@@ -79,7 +84,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            xray {{i18n "index-state"}}:
+                             {{i18n "system-status-list-xray-state"}}:
                             <a-tag :color="status.xray.color">[[ status.xray.state ]]</a-tag>
                             <a-tooltip v-if="status.xray.state === State.Error">
                                 <template slot="title">
@@ -88,16 +93,16 @@
                                 <a-icon type="question-circle" theme="filled"></a-icon>
                             </a-tooltip>
                             <a-tag color="green" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
-                            <a-tag color="blue" @click="openSelectV2rayVersion">{{i18n "switch-version"}}</a-tag>
+                            <a-tag color="blue" @click="openSelectV2rayVersion">{{i18n "system-status-list-item-switch-version"}}</a-tag>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            {{i18n "operation-hours"}}:
+                            {{i18n "system-status-list-operation-hours"}}:
                             <a-tag color="#87d068">[[ formatSecond(status.uptime) ]]</a-tag>
                             <a-tooltip>
                                 <template slot="title">
-                                    {{i18n "RTSWIS"}}
+                                    {{i18n "system-status-list-operation-hours-tooltip"}}
                                 </template>
                                 <a-icon type="question-circle" theme="filled"></a-icon>
                             </a-tooltip>
@@ -106,7 +111,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <div style="display: flex;flex-direction: row;gap: 5px ; justify-content: start">
-                                <span>{{i18n "system-load"}}</span>
+                                <span>{{i18n "system-status-list-system-load"}}</span>
                                 <div>
                                     : [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]                                </div>
                             </div>
@@ -115,13 +120,13 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <div style="display: flex;flex-direction: row;gap: 5px ; justify-content: start;align-items: center">
-                                <span>{{i18n "tcp-udp-noc"}}</span>
+                                <span>{{i18n "system-status-list-tcp-udp-connections"}}</span>
                                 <div>
                                     : [[ status.tcpCount ]] / [[ status.udpCount ]]
                                 </div>
                                 <a-tooltip>
                                     <template slot="title" style="text-align: end">
-                                        {{i18n "tnocfanc"}}
+                                        {{i18n "system-status-list-tcp-udp-connections-tooltip"}}
                                     </template>
                                     <a-icon type="question-circle" theme="filled"></a-icon>
                                 </a-tooltip>
@@ -136,7 +141,7 @@
                                     [[ sizeFormat(status.netIO.up) ]] / S
                                     <a-tooltip>
                                         <template slot="title">
-                                            {{i18n "snocfanc"}}
+                                            {{i18n "system-status-list-upload-speed"}}
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -146,7 +151,7 @@
                                     [[ sizeFormat(status.netIO.down) ]] / S
                                     <a-tooltip>
                                         <template slot="title">
-                                            {{i18n "dnocfanc"}}
+                                            {{i18n "system-status-list-download-speed"}}
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -161,8 +166,8 @@
                                     <a-icon type="cloud-upload"></a-icon>
                                     [[ sizeFormat(status.netTraffic.sent) ]]
                                     <a-tooltip>
-                                        <template slot="title">
-                                            {{i18n "hnocfanc"}}
+                                        <template  slot="title">
+                                            {{i18n "system-status-list-upload-traffic"}}
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -172,7 +177,7 @@
                                     [[ sizeFormat(status.netTraffic.recv) ]]
                                     <a-tooltip>
                                         <template slot="title">
-                                            {{i18n "tdnocfanc"}}
+                                            {{i18n "system-status-list-download-traffic"}}
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -184,11 +189,11 @@
             </transition>
         </a-layout-content>
     </a-layout>
-    <a-modal id="version-modal" v-model="versionModal.visible" title='{{ i18n "type-switch" }}'
+    <a-modal id="version-modal" v-model="versionModal.visible" title='{{ i18n "version-switch-alert-box-title" }}'
              :closable="true" @ok="() => versionModal.visible = false"
-             ok-text='{{i18n "confirm"}}' cancel-text='{{i18n "close"}}'>
-        <h2>{{i18n "switch-version-change"}}</h2>
-        <h2>{{i18n "switch-version-change-warn-text"}}</h2>
+             ok-text='{{i18n "version-switch-alert-box-button-confirm"}}' cancel-text='{{i18n "version-switch-alert-box-button-close"}}'>
+        <h2>{{i18n "version-switch-alert-box-title"}}</h2>
+        <h2>{{i18n "version-switch-alert-box-warn"}}</h2>
         <template v-for="version, index in versionModal.versions">
             <a-tag :color="index % 2 == 0 ? 'blue' : 'green'"
                    style="margin: 10px" @click="switchV2rayVersion(version)">
@@ -198,7 +203,17 @@
     </a-modal>
 </a-layout>
 {{template "js" .}}
+
 <script>
+
+
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let value = params.lang;
+    if(value!==null && value==='fa'){
+        document.body.lang='fa'
+    }
 
     const State = {
         Running: "running",
@@ -206,7 +221,6 @@
         Error: "error",
     }
     Object.freeze(State);
-
     class CurTotal {
 
         constructor(current, total) {
@@ -232,7 +246,6 @@
             }
         }
     }
-
     class Status {
         constructor(data) {
             this.cpu = new CurTotal(0, 0);
@@ -324,13 +337,13 @@
             },
             switchV2rayVersion(version) {
                 this.$confirm({
-                    title: '{{i18n "change-xray-alert-title"}}',
-                    content: '{{i18n "change-xray-alert-subtitle"}}' + ` ${version}`,
-                    okText: '{{i18n "confirm"}}',
-                    cancelText: '{{i18n "cancel"}}',
+                    title: '{{i18n "version-switch-alert-confirm-alert-title"}}',
+                    content: '{{i18n "version-switch-alert-confirm-alert-subtitle"}}' + ` ${version}`,
+                    okText: '{{i18n "version-switch-alert-box-button-confirm"}}',
+                    cancelText: '{{i18n "version-switch-alert-box-button-close"}}',
                     onOk: async () => {
                         versionModal.hide();
-                        this.loading(true, '{{i18n "instalation-warning"}}');
+                        this.loading(true, '{{i18n "installation-warning"}}');
                         await HttpUtil.post(`/server/installXray/${version}`);
                         this.loading(false);
                     },
@@ -350,5 +363,7 @@
     });
 
 </script>
+
+
 </body>
 </html>

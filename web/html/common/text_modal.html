@@ -29,7 +29,7 @@
                     this.clipboard = new ClipboardJS('#txt-modal-ok-btn', {
                         text: () => this.content,
                     });
-                    this.clipboard.on('success', () => app.$message.success('{{ i18n "copied" }}'));
+                    this.clipboard.on('success', () => app.$message.success('{{ i18n "check-option-copy-success" }}'));
                 }
                 if (this.qrcode === null) {
                     this.qrcode = new QRious({

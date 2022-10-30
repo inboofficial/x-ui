@@ -67,7 +67,7 @@ func (s *InboundService) AddInbounds(inbounds []*model.Inbound) error {
 			return err
 		}
 		if exist {
-			return common.NewError("端口已存在:", inbound.Port)
+			return common.NewError("port already exists:", inbound.Port)
 		}
 	}
 
@@ -113,7 +113,7 @@ func (s *InboundService) UpdateInbound(inbound *model.Inbound) error {
 		return err
 	}
 	if exist {
-		return common.NewError("端口已存在:", inbound.Port)
+		return common.NewError("port already exists:", inbound.Port)
 	}
 
 	oldInbound, err := s.GetInbound(inbound.Id)

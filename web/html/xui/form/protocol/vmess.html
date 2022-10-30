@@ -3,7 +3,7 @@
     <a-form-item label="id">
         <a-input v-model.trim="inbound.settings.vmesses[0].id"></a-input>
     </a-form-item>
-    <a-form-item label="additional ID">
+    <a-form-item label='{{i18n "add-table-popup-additional-id"}}'>
         <a-input type="number" v-model.number="inbound.settings.vmesses[0].alterId"></a-input>
     </a-form-item>
     <a-form-item label='{{ i18n "vmess-disable-insecure-encryption" }}'>
