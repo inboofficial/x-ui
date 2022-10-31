@@ -89,7 +89,7 @@ func (a *InboundController) delInbound(c *gin.Context) {
 func (a *InboundController) updateInbound(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		jsonMsg(c, "Revise", err)
+		jsonMsg(c, "done", err)
 		return
 	}
 	inbound := &model.Inbound{
@@ -97,11 +97,11 @@ func (a *InboundController) updateInbound(c *gin.Context) {
 	}
 	err = c.ShouldBind(inbound)
 	if err != nil {
-		jsonMsg(c, "Revise", err)
+		jsonMsg(c, "done", err)
 		return
 	}
 	err = a.inboundService.UpdateInbound(inbound)
-	jsonMsg(c, "Revise", err)
+	jsonMsg(c, "done", err)
 	if err == nil {
 		a.xrayService.SetToNeedRestart()
 	}

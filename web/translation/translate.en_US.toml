@@ -36,6 +36,7 @@ sidebar-logout = 'logout'
 sidebar-more = 'more'
 sidebar-panel-settings = 'panel settings'
 sidebar-system-status = 'system status'
+sidebar-system-language = 'language'
 
 
 #settings
@@ -147,7 +148,7 @@ subtab-time-zone = 'Time zone'
 subtab-time-zone-desc = 'The scheduled task runs according to the time in the time zone, and restarts the panel to take effect'
 subtab-xray-config-template = 'xray configuration template'
 subtab-xray-config-template-desc = 'Generate the final xray configuration file based on this template, restart the panel to take effect'
-subtap-change-user-setting-button = 'Revise'
+subtap-change-user-setting-button = 'done'
 tab-config-text = 'Panel configuration'
 tab-other-settings = 'other settings'
 tab-tg-settings = 'TG related settings'

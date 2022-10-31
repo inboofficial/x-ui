@@ -69,7 +69,7 @@ func (j *StatsNotifyJob) Run() {
 		fmt.Println("get hostname error:", err)
 		return
 	}
-	info = fmt.Sprintf("主机名称:%s\r\n", name)
+	info = fmt.Sprintf("hostname:%s\r\n", name)
 	//get ip address
 	var ip string
 	netInterfaces, err := net.Interfaces()
@@ -95,7 +95,7 @@ func (j *StatsNotifyJob) Run() {
 			}
 		}
 	}
-	info += fmt.Sprintf("IP地址:%s\r\n \r\n", ip)
+	info += fmt.Sprintf("IP address:%s\r\n \r\n", ip)
 
 	//get traffic
 	inbouds, err := j.inboundService.GetAllInbounds()
@@ -106,7 +106,7 @@ func (j *StatsNotifyJob) Run() {
 	//NOTE:If there no any sessions here,need to notify here
 	//TODO:分节点推送,自动转化格式
 	for _, inbound := range inbouds {
-		info += fmt.Sprintf("节点名称:%s\r\n端口:%d\r\n上行流量↑:%s\r\n下行流量↓:%s\r\n总流量:%s\r\n", inbound.Remark, inbound.Port, common.FormatTraffic(inbound.Up), common.FormatTraffic(inbound.Down), common.FormatTraffic((inbound.Up + inbound.Down)))
+		info += fmt.Sprintf("node name:%s\r\nport:%d\r\nUpstream traffic↑:%s\r\nDownlink traffic↓:%s\r\ntotal flow:%s\r\n", inbound.Remark, inbound.Port, common.FormatTraffic(inbound.Up), common.FormatTraffic(inbound.Down), common.FormatTraffic((inbound.Up + inbound.Down)))
 		if inbound.ExpiryTime == 0 {
 			info += fmt.Sprintf("Expiration Date:\r\n \r\n")
 		} else {
@@ -129,12 +129,12 @@ func (j *StatsNotifyJob) UserLoginNotify(username string, ip string, time string
 		return
 	}
 	if status == LoginSuccess {
-		msg = fmt.Sprintf("面板登录成功提醒\r\n主机名称:%s\r\n", name)
+		msg = fmt.Sprintf("Panel login success reminder\r\nhostname:%s\r\n", name)
 	} else if status == LoginFail {
-		msg = fmt.Sprintf("面板登录失败提醒\r\n主机名称:%s\r\n", name)
+		msg = fmt.Sprintf("\nPanel login failure reminder\r\nhostname:%s\r\n", name)
 	}
-	msg += fmt.Sprintf("时间:%s\r\n", time)
-	msg += fmt.Sprintf("用户:%s\r\n", username)
+	msg += fmt.Sprintf("time:%s\r\n", time)
+	msg += fmt.Sprintf("user:%s\r\n", username)
 	msg += fmt.Sprintf("IP:%s\r\n", ip)
 	j.SendMsgToTgbot(msg)
 }

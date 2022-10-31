@@ -29,6 +29,22 @@
     <a-icon type="logout"></a-icon>
     <span>{{i18n "sidebar-logout"}}</span>
 </a-menu-item>
+
+<a-sub-menu>
+    <template slot="title">
+        <a-icon type="link"></a-icon>
+        <span>{{i18n "sidebar-system-language"}}</span>
+    </template>
+    <a-menu-item @click="()=>location.reload()" key="?lang=fa">
+        <span>persian</span>
+    </a-menu-item>
+    <a-menu-item @click="()=>location.reload()" key="?lang=en">
+        <span>english</span>
+    </a-menu-item>
+</a-sub-menu>
+
+
+
 {{end}}
 
 
@@ -50,7 +66,10 @@
         {{template "menuItems" .}}
     </a-menu>
 </a-drawer>
+
+
 <script>
+
 
     const siderDrawer = {
         visible: false,
@@ -64,6 +83,8 @@
             this.visible = !this.visible;
         }
     };
+
+
 
 </script>
 {{end}}
