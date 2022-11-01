@@ -234,17 +234,6 @@ func (s *Server) initI18n(engine *gin.Engine) error {
 	var localizer *i18n.Localizer
 
 	engine.Use(func(c *gin.Context) {
-		cookie, err := c.Cookie("lang")
-		logger.Info("selectedLang", c.Query("lang"))
-		if err == nil {
-			var selectedLang = c.Query("lang")
-			if selectedLang != cookie && selectedLang != "" {
-				c.SetCookie("lang", selectedLang, 3600, "/", c.Request.Host, false, true)
-			}
-		}
-	})
-
-	engine.Use(func(c *gin.Context) {
 		accept := c.GetHeader("Accept-Language")
 		cookie, _ := c.Cookie("lang")
 		if cookie == "en" {

@@ -35,10 +35,10 @@
         <a-icon type="link"></a-icon>
         <span>{{i18n "sidebar-system-language"}}</span>
     </template>
-    <a-menu-item @click="()=>location.reload()" key="?lang=fa">
-        <span>persian</span>
+    <a-menu-item @click="reload('fa')" key="#">
+        <span >persian</span>
     </a-menu-item>
-    <a-menu-item @click="()=>location.reload()" key="?lang=en">
+    <a-menu-item @click="reload('en')" key="#">
         <span>english</span>
     </a-menu-item>
 </a-sub-menu>
@@ -70,6 +70,11 @@
 
 <script>
 
+    async function reload(ln) {
+        console.log('loaded')
+        document.cookie = "lang="+ln;
+        window.location.reload()
+    }
 
     const siderDrawer = {
         visible: false,
