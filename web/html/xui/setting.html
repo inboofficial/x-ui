@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 {{template "head" .}}
 <style>
+    body {
+        font-family: dana !important;
+    }
+    #app:lang(fa) {
+        direction: rtl;
+    }
+    .ant-row:lang(fa){
+        display: flex;
+        align-items: center;
+    }
     @media (min-width: 769px) {
         .ant-layout-content {
             margin: 24px 16px;
         }
     }
-
+    .ant-modal-body:lang(fa) {
+        direction: rtl;
+    }
+    .ant-modal-title:lang(fa) {
+        direction: rtl;
+    }
+    .ant-modal-close:lang(fa){
+        top: 0;
+        left: 0;
+    }
     .ant-col-sm-24 {
         margin-top: 10px;
     }
-
     .ant-tabs-bar {
         margin: 0;
     }
-
     .ant-list-item {
         display: block;
     }
-
     .ant-tabs-top-bar {
         background: white;
+    }
+    .ant-tabs-ink-bar:lang(fa){
+        display: none !important;
+    }
+    .ant-tabs-nav-scroll:lang(fa){
+        direction: rtl;
+    }
+    .tab-panel-item:lang(fa){
+        direction: rtl;
+    }
+    textarea.ant-input:lang(fa){
+        direction: ltr!important;
+    }
+    .button-group{
+        display: flex;
+        gap: 10px;
     }
 </style>
 <body>
@@ -31,21 +63,35 @@
         <a-layout-content>
             <a-spin :spinning="spinning" :delay="500" tip="loading">
                 <a-space direction="vertical">
-                    <a-space direction="horizontal">
-                        <a-button type="primary" :disabled="saveBtnDisable" @click="updateAllSetting">{{ i18n "top-bar-control-button-save-text" }}</a-button>
-                        <a-button type="danger" :disabled="!saveBtnDisable" @click="restartPanel">{{ i18n "top-bar-control-button-restart-text" }}</a-button>
+                    <a-space class="button-group" direction="horizontal">
+                        <a-button type="primary" :disabled="saveBtnDisable" @click="updateAllSetting">{{ i18n
+                            "top-bar-control-button-save-text" }}
+                        </a-button>
+                        <a-button type="danger" :disabled="!saveBtnDisable" @click="restartPanel">{{ i18n
+                            "top-bar-control-button-restart-text" }}
+                        </a-button>
                     </a-space>
-                    <a-tabs default-active-key="1">
-                        <a-tab-pane key="1" tab='{{i18n "tab-config-text"}}'>
+                    <a-tabs dir="ltr" default-active-key="1">
+                        <a-tab-pane class="tab-panel-item"  key="1" tab='{{i18n "tab-config-text"}}'>
                             <a-list item-layout="horizontal" style="background: white">
-                                <setting-list-item type="text" title='{{i18n "subtab-monitor-panel-ip"}}' desc='{{i18n "subtab-monitor-panel-ip-desc" }}' v-model="allSetting.webListen"></setting-list-item>
-                                <setting-list-item type="number" title='{{ i18n "subtab-panel-listening-port"}}' desc='{{ i18n "subtab-panel-listening-port-desc"}}' v-model.number="allSetting.webPort"></setting-list-item>
-                                <setting-list-item type="text" title='{{ i18n "subtab-certificate-public-key"}}' desc='{{ i18n "subtab-certificate-public-key-desc"}}' v-model="allSetting.webCertFile"></setting-list-item>
-                                <setting-list-item type="text" title='{{ i18n "subtab-certificate-key-path"}}' desc='{{i18n "subtab-certificate-key-path-desc"}}' v-model="allSetting.webKeyFile"></setting-list-item>
-                                <setting-list-item type="text" title='{{ i18n "subtab-panel-url-root-path"}}' desc='{{ i18n "subtab-panel-url-root-path-desc"}}' v-model="allSetting.webBasePath"></setting-list-item>
+                                <setting-list-item type="text" title='{{i18n "subtab-monitor-panel-ip"}}'
+                                                   desc='{{i18n "subtab-monitor-panel-ip-desc" }}'
+                                                   v-model="allSetting.webListen"></setting-list-item>
+                                <setting-list-item type="number" title='{{ i18n "subtab-panel-listening-port"}}'
+                                                   desc='{{ i18n "subtab-panel-listening-port-desc"}}'
+                                                   v-model.number="allSetting.webPort"></setting-list-item>
+                                <setting-list-item type="text" title='{{ i18n "subtab-certificate-public-key"}}'
+                                                   desc='{{ i18n "subtab-certificate-public-key-desc"}}'
+                                                   v-model="allSetting.webCertFile"></setting-list-item>
+                                <setting-list-item type="text" title='{{ i18n "subtab-certificate-key-path"}}'
+                                                   desc='{{i18n "subtab-certificate-key-path-desc"}}'
+                                                   v-model="allSetting.webKeyFile"></setting-list-item>
+                                <setting-list-item type="text" title='{{ i18n "subtab-panel-url-root-path"}}'
+                                                   desc='{{ i18n "subtab-panel-url-root-path-desc"}}'
+                                                   v-model="allSetting.webBasePath"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
-                        <a-tab-pane key="2" tab='{{ i18n "tab-user-settings"}}'>
+                        <a-tab-pane class="tab-panel-item" key="2" tab='{{ i18n "tab-user-settings"}}'>
                             <a-form style="background: white; padding: 20px">
                                 <a-form-item label='{{ i18n "subtab-original-username"}}'>
                                     <a-input v-model="user.oldUsername" style="max-width: 300px"></a-input>
@@ -62,26 +108,40 @@
                                              style="max-width: 300px"></a-input>
                                 </a-form-item>
                                 <a-form-item>
-                                    <a-button type="primary" @click="updateUser">{{i18n "subtap-change-user-setting-button" }}</a-button>
+                                    <a-button type="primary" @click="updateUser">{{i18n
+                                        "subtap-change-user-setting-button" }}
+                                    </a-button>
                                 </a-form-item>
                             </a-form>
                         </a-tab-pane>
-                        <a-tab-pane key="3" tab='{{ i18n "tab-xray-settings" }}'>
+                        <a-tab-pane class="tab-panel-item" key="3" tab='{{ i18n "tab-xray-settings" }}'>
                             <a-list item-layout="horizontal" style="background: white">
-                                <setting-list-item type="textarea" title='{{ i18n "subtab-xray-config-template" }}' desc='{{i18n "subtab-xray-config-template-desc"}}}' v-model="allSetting.xrayTemplateConfig"></setting-list-item>
+                                <setting-list-item class="config-text" type="textarea" title='{{ i18n "subtab-xray-config-template"}}'
+                                                   desc='{{i18n "subtab-xray-config-template-desc"}}}'
+                                                   v-model="allSetting.xrayTemplateConfig"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
-                        <a-tab-pane key="4" tab='{{ i18n "tab-tg-settings"}}'>
+                        <a-tab-pane class="tab-panel-item" key="4" tab='{{ i18n "tab-tg-settings"}}'>
                             <a-list item-layout="horizontal" style="background: white">
-                                <setting-list-item type="switch" title='{{ i18n "subtab-enable-telegram-bot"}}' desc='{{ i18n "subtab-enable-telegram-bot-desc"}}'  v-model="allSetting.tgBotEnable"></setting-list-item>
-                                <setting-list-item type="text" title='{{i18n "subtab-telegram-bot-token"}}' desc='{{i18n "subtab-telegram-bot-token-desc" }}'  v-model="allSetting.tgBotToken"></setting-list-item>
-                                <setting-list-item type="number" title='{{i18n "subtab-telegram-bot-chatId"}}' desc='{{i18n "subtab-telegram-bot-chatId-desc" }}'  v-model.number="allSetting.tgBotChatId"></setting-list-item>
-                                <setting-list-item type="text" title='{{i18n "subtab-telegram-bot-notification"}}' desc='{{i18n "subtab-telegram-bot-notification-desc"}}'  v-model="allSetting.tgRunTime"></setting-list-item>
+                                <setting-list-item type="switch" title='{{ i18n "subtab-enable-telegram-bot"}}'
+                                                   desc='{{ i18n "subtab-enable-telegram-bot-desc"}}'
+                                                   v-model="allSetting.tgBotEnable"></setting-list-item>
+                                <setting-list-item type="text" title='{{i18n "subtab-telegram-bot-token"}}'
+                                                   desc='{{i18n "subtab-telegram-bot-token-desc" }}'
+                                                   v-model="allSetting.tgBotToken"></setting-list-item>
+                                <setting-list-item type="number" title='{{i18n "subtab-telegram-bot-chatId"}}'
+                                                   desc='{{i18n "subtab-telegram-bot-chatId-desc" }}'
+                                                   v-model.number="allSetting.tgBotChatId"></setting-list-item>
+                                <setting-list-item type="text" title='{{i18n "subtab-telegram-bot-notification"}}'
+                                                   desc='{{i18n "subtab-telegram-bot-notification-desc"}}'
+                                                   v-model="allSetting.tgRunTime"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
-                        <a-tab-pane key="5" tab='{{i18n "tab-other-settings"}}'>
+                        <a-tab-pane class="tab-panel-item" key="5" tab='{{i18n "tab-other-settings"}}'>
                             <a-list item-layout="horizontal" style="background: white">
-                                <setting-list-item type="text" title='{{i18n "subtab-time-zone"}}' desc='{{ i18n "subtab-time-zone-desc" }}' v-model="allSetting.timeLocation"></setting-list-item>
+                                <setting-list-item type="text" title='{{i18n "subtab-time-zone"}}'
+                                                   desc='{{ i18n "subtab-time-zone-desc" }}'
+                                                   v-model="allSetting.timeLocation"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
                     </a-tabs>

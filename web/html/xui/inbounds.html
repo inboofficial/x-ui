@@ -1,7 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 {{template "head" .}}
 <style>
+    body{
+        font-family: dana !important;
+    }
+    #app:lang(fa) {
+        direction: rtl;
+    }
+    .plus-butt{
+         margin: 0;
+         padding: 6px;
+     }
+    .title-v {
+        direction: ltr;
+    }
+
     @media (min-width: 769px) {
         .ant-layout-content {
             margin: 24px 16px;
@@ -20,7 +34,8 @@
             <a-spin :spinning="spinning" :delay="500" tip="loading">
                 <transition name="list" appear>
                     <a-tag v-if="false" color="red" style="margin-bottom: 10px">
-                        Please go to the panel settings as soon as possible to modify the username and password, otherwise there may be a risk of leaking account information
+                        Please go to the panel settings as soon as possible to modify the username and password,
+                        otherwise there may be a risk of leaking account information
                     </a-tag>
                 </transition>
                 <transition name="list" appear>
@@ -28,15 +43,17 @@
                         <a-row>
                             <a-col :xs="24" :sm="24" :lg="12">
                                 {{ i18n "inbound-total-upload-title" }}
-                                <a-tag color="green">[[ sizeFormat(total.up) ]] / [[ sizeFormat(total.down) ]]</a-tag>
+                                <a-tag class="title-v" color="green">[[ sizeFormat(total.up) ]] / [[
+                                    sizeFormat(total.down) ]]
+                                </a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
                                 {{i18n "inbound-total-amount"}}：
-                                <a-tag color="green">[[ sizeFormat(total.up + total.down) ]]</a-tag>
+                                <a-tag class="title-v" color="green">[[ sizeFormat(total.up + total.down) ]]</a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
                                 {{i18n "inbound-number-of-inbounds"}}：
-                                <a-tag color="green">[[ dbInbounds.length ]]</a-tag>
+                                <a-tag class="title-v" color="green">[[ dbInbounds.length ]]</a-tag>
                             </a-col>
                         </a-row>
                     </a-card>
@@ -44,9 +61,9 @@
                 <transition name="list" appear>
                     <a-card hoverable>
                         <div slot="title">
-                            <a-button type="primary" icon="plus" @click="openAddInbound"></a-button>
+                            <a-button class="plus-butt" type="primary" icon="plus" @click="openAddInbound"></a-button>
                         </div>
-<!--                        <a-input v-model="searchKey" placeholder="搜索" autofocus style="max-width: 300px"></a-input>-->
+                        <!-- <a-input v-model="searchKey" placeholder="搜索" autofocus style="max-width: 300px"></a-input>-->
                         <a-table :columns="columns" :row-key="dbInbound => dbInbound.id"
                                  :data-source="dbInbounds"
                                  :loading="spinning" :scroll="{ x: 1500 }"
@@ -81,9 +98,12 @@
                                 <a-tag color="blue">[[ dbInbound.protocol ]]</a-tag>
                             </template>
                             <template slot="traffic" slot-scope="text, dbInbound">
-                                <a-tag color="blue">[[ sizeFormat(dbInbound.up) ]] / [[ sizeFormat(dbInbound.down) ]]</a-tag>
+                                <a-tag class="title-v" color="blue">[[ sizeFormat(dbInbound.up) ]] / [[ sizeFormat(dbInbound.down) ]]
+                                </a-tag>
                                 <template v-if="dbInbound.total > 0">
-                                    <a-tag v-if="dbInbound.up + dbInbound.down < dbInbound.total" color="cyan">[[ sizeFormat(dbInbound.total) ]]</a-tag>
+                                    <a-tag v-if="dbInbound.up + dbInbound.down < dbInbound.total" color="cyan">[[
+                                        sizeFormat(dbInbound.total) ]]
+                                    </a-tag>
                                     <a-tag v-else color="red">[[ sizeFormat(dbInbound.total) ]]</a-tag>
                                 </template>
                                 <a-tag v-else color="green">{{ i18n "infinity" }}</a-tag>
@@ -92,7 +112,8 @@
                                 <a-button type="link" @click="showInfo(dbInbound)">{{i18n "check"}}</a-button>
                             </template>
                             <template slot="stream" slot-scope="text, dbInbound, index">
-                                <template v-if="dbInbound.isVMess || dbInbound.isVLess || dbInbound.isTrojan || dbInbound.isSS">
+                                <template
+                                        v-if="dbInbound.isVMess || dbInbound.isVLess || dbInbound.isTrojan || dbInbound.isSS">
                                     <a-tag color="green">[[ inbounds[index].stream.network ]]</a-tag>
                                     <a-tag v-if="inbounds[index].stream.isTls" color="blue">tls</a-tag>
                                     <a-tag v-if="inbounds[index].stream.isXTls" color="blue">xtls</a-tag>
@@ -127,12 +148,12 @@
         title: '{{ i18n "table-column-name-oprate" }}',
         align: 'center',
         width: 30,
-        scopedSlots: { customRender: 'action' },
+        scopedSlots: {customRender: 'action'},
     }, {
         title: '{{ i18n "table-column-name-enable" }}',
         align: 'center',
         width: 40,
-        scopedSlots: { customRender: 'enable' },
+        scopedSlots: {customRender: 'enable'},
     }, {
         title: "id",
         align: 'center',
@@ -147,7 +168,7 @@
         title: '{{ i18n "table-column-name-protocol" }}',
         align: 'center',
         width: 60,
-        scopedSlots: { customRender: 'protocol' },
+        scopedSlots: {customRender: 'protocol'},
     }, {
         title: '{{ i18n "table-column-name-port" }}',
         align: 'center',
@@ -157,22 +178,22 @@
         title: '{{ i18n "table-column-name-traffic" }}',
         align: 'center',
         width: 150,
-        scopedSlots: { customRender: 'traffic' },
+        scopedSlots: {customRender: 'traffic'},
     }, {
         title: '{{ i18n "table-column-name-details" }}',
         align: 'center',
         width: 40,
-        scopedSlots: { customRender: 'settings' },
+        scopedSlots: {customRender: 'settings'},
     }, {
         title: '{{ i18n "table-column-name-settings" }}',
         align: 'center',
         width: 60,
-        scopedSlots: { customRender: 'stream' },
+        scopedSlots: {customRender: 'stream'},
     }, {
         title: '{{ i18n "add-table-popup-expiry" }}',
         align: 'center',
         width: 80,
-        scopedSlots: { customRender: 'expiryTime' },
+        scopedSlots: {customRender: 'expiryTime'},
     }];
 
     const app = new Vue({
@@ -186,7 +207,7 @@
             searchKey: '',
         },
         methods: {
-            loading(spinning=true) {
+            loading(spinning = true) {
                 this.spinning = spinning;
             },
             async getDBInbounds() {

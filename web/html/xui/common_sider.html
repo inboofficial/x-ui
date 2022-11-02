@@ -11,20 +11,6 @@
     <a-icon type="setting"></a-icon>
     <span>{{i18n "sidebar-panel-settings"}}</span>
 </a-menu-item>
-<!--<a-menu-item key="{{ .base_path }}xui/clients">-->
-<!--    <a-icon type="laptop"></a-icon>-->
-<!--    <span>客户端</span>-->
-<!--</a-menu-item>-->
-<a-sub-menu>
-    <template slot="title">
-        <a-icon type="link"></a-icon>
-        <span>{{i18n "sidebar-more"}}</span>
-    </template>
-    <a-menu-item key="https://github.com/vaxilu/x-ui/">
-        <a-icon type="github"></a-icon>
-        <span>Github</span>
-    </a-menu-item>
-</a-sub-menu>
 <a-menu-item key="{{ .base_path }}logout">
     <a-icon type="logout"></a-icon>
     <span>{{i18n "sidebar-logout"}}</span>
@@ -32,7 +18,6 @@
 
 <a-sub-menu>
     <template slot="title">
-        <a-icon type="link"></a-icon>
         <span>{{i18n "sidebar-system-language"}}</span>
     </template>
     <a-menu-item @click="reload('fa')" key="#">
@@ -70,9 +55,32 @@
 
 <script>
 
+    if(getCookie('lang')==='fa'){
+        document.body.lang='fa'
+    }
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+
     async function reload(ln) {
-        console.log('loaded')
         document.cookie = "lang="+ln;
+        if(ln==='fa'){
+            document.body.lang='fa'
+        }
         window.location.reload()
     }
 

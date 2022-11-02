@@ -46,7 +46,7 @@ func jsonMsgObj(c *gin.Context, msg string, obj interface{}, err error) {
 	if err == nil {
 		m.Success = true
 		if msg != "" {
-			m.Msg = msg + "success"
+			m.Msg = msg + " successfully"
 		}
 	} else {
 		m.Success = false
