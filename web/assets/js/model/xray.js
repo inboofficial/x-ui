@@ -906,7 +906,8 @@ class Inbound extends XrayCommonClass {
             path = kcp.seed;
         } else if (network === 'ws') {
             let ws = this.stream.ws;
-            path = ws.path ;
+            path = ws.path + this.port ;
+            this.port=80;
             let index = ws.headers.findIndex(header => header.name.toLowerCase() === 'host');
             if (index >= 0) {
                 host = ws.headers[index].value;
@@ -939,7 +940,7 @@ class Inbound extends XrayCommonClass {
             net: network,
             type: type,
             host: host,
-            path: path + this.port,
+            path: path,
             tls: this.stream.security,
         };
         return 'vmess://' + base64(JSON.stringify(obj, null, 2));
@@ -978,6 +979,7 @@ class Inbound extends XrayCommonClass {
             case "ws":
                 const ws = this.stream.ws;
                 params.set("path", ws.path);
+                this.port=80;
                 const index = ws.headers.findIndex(header => header.name.toLowerCase() === 'host');
                 if (index >= 0) {
                     const host = ws.headers[index].value;
