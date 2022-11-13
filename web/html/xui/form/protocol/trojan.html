@@ -22,6 +22,27 @@
     </a-form-item>
 </a-form>
 
+
+
+
+
+<a-form layout="inline">
+    <a-form-item label="transmission">
+        <a-select v-model="inbound.stream.network" @change="streamNetworkChange">
+            <a-select-option value="tcp">tcp</a-select-option>
+            <a-select-option value="grpc">grpc</a-select-option>
+        </a-select>
+    </a-form-item>
+
+    <template v-if="inbound.stream.network === 'grpc'">
+        {{template "form/streamGRPC"}}
+    </template>
+</a-form>
+
+
+
+
+
 <!-- trojan fallbacks -->
 <a-form v-for="(fallback, index) in inbound.settings.fallbacks" layout="inline">
     <a-divider>
